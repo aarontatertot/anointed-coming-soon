@@ -46,8 +46,9 @@ export default function ComingSoon() {
 
         {/* Password form or access granted */}
         {accessGranted ? (
+          (() => { if (typeof window !== 'undefined') { window.location.href = 'https://anointed-theta.vercel.app'; } return null; })() ||
           <p className="text-neutral-400 text-sm tracking-widest uppercase text-center">
-            Coming soon. By appointment only.
+            Redirecting...
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4 w-full">
