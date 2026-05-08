@@ -22,7 +22,7 @@ export default function ComingSoon() {
 
   useEffect(() => {
     if (accessGranted) {
-      window.location.href = "https://anointed-theta.vercel.app";
+      window.location.href = "https://anointedbarbershop.com";
     }
   }, [accessGranted]);
 
