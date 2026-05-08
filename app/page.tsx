@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 const CORRECT_PASSWORD = "anointed2026";
@@ -20,16 +20,22 @@ export default function ComingSoon() {
     }
   }
 
+  useEffect(() => {
+    if (accessGranted) {
+      window.location.href = "https://anointed-theta.vercel.app";
+    }
+  }, [accessGranted]);
+
   return (
     <main className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
       <div className="flex flex-col items-center gap-6 w-full max-w-xs">
         {/* Logo */}
         <Image
-          src="/logo-a-mark-light.png"
+          src="/logo-new.svg"
           alt="Anointed Studio"
           width={128}
           height={128}
-          className="w-32 h-auto"
+          className="w-32 h-auto logo-login-animation"
           priority
         />
 
@@ -46,7 +52,6 @@ export default function ComingSoon() {
 
         {/* Password form or access granted */}
         {accessGranted ? (
-          (() => { if (typeof window !== 'undefined') { window.location.href = 'https://anointed-theta.vercel.app'; } return null; })() ||
           <p className="text-neutral-400 text-sm tracking-widest uppercase text-center">
             Redirecting...
           </p>
