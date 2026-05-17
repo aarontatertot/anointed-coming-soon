@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 
 const CORRECT_PASSWORD = "anointed2026";
 
@@ -28,17 +27,13 @@ export default function ComingSoon() {
 
   return (
     <main className="min-h-screen bg-black flex flex-col items-center justify-center px-4">
-      <style>{`@keyframes logoIntro { 0% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.3) rotate(0deg); } 100% { transform: scale(1.3) rotate(360deg); } }`}</style>
-      <div className="flex flex-col items-center gap-6 w-full max-w-xs">
-        {/* Logo */}
-        <Image
-          src="/logo-new.svg"
+      <div className="flex flex-col items-center gap-6 w-full" style={{ maxWidth: "min(480px, 90vw)" }}>
+
+        {/* Animated logo — SVG with draw-on animation embedded */}
+        <img
+          src="/anointed-logo-animated.svg"
           alt="Anointed Studio"
-          width={128}
-          height={128}
-          className="w-32 h-auto logo-login-animation"
-          priority
-          style={{ animation: "logoIntro 2s ease-in-out forwards" }}
+          style={{ width: "min(480px, 90vw)", height: "auto", display: "block" }}
         />
 
         {/* Brand name */}
